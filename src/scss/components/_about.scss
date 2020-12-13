@@ -1,0 +1,100 @@
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__content {
+    max-width: 70em;
+    margin: 0 2em 2em 2em;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+
+    #about__text {
+      font-size: 1.25em;
+      grid-row: 1;
+      margin: 1em;
+
+      p {
+        margin-bottom: 1em;
+        color: $color-darkGrey;
+      }
+    }
+    #about__imgs {
+      grid-row: 2;
+      display: grid;
+      place-items: center;
+
+      .img {
+        width: 100%;
+        background: #000;
+        transition: transform 0.2s ease;
+        max-width: 25em;
+        box-shadow: $shadow-smooth;
+      }
+    }
+  }
+
+  &__features {
+    width: 100%;
+    padding: 2rem 1rem;
+
+    background: linear-gradient(rgba($color-red, 0.8), rgba(#ff022c, 0.75)),
+      url("/dist/img/featuresimg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &-inner {
+      max-width: 80rem;
+      width: 100%;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1;
+      grid-template-rows: repeat(4, 1fr);
+      grid-gap: 1rem;
+
+      .feature {
+        background: $color-white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        max-width: 20rem;
+        box-shadow: $shadow-smooth;
+        border-radius: 0.25rem;
+
+        i {
+          color: $color-red;
+          font-size: 4rem;
+          background: linear-gradient(
+            to bottom right,
+            rgba($color-red, 0.8),
+            rgba(#ff022c, 0.8)
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          -moz-text-fill-color: transparent;
+        }
+        p {
+          color: $color-darkGrey;
+          font-size: 1.25em;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

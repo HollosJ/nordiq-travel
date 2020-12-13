@@ -1,0 +1,86 @@
+#stories {
+  position: relative;
+  background: $color-blueyGrey;
+  background: linear-gradient(
+      to bottom right,
+      rgba($color-blueyGrey, 0.5),
+      rgba($color-darkGrey, 0.5)
+    ),
+    url("/dist/img/storiesimg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em 2em;
+
+  &__header {
+    color: $color-white;
+  }
+
+  #story {
+    max-width: 50em;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1em;
+    margin: 1em 1em 3em 1em;
+
+    background: rgba($color-white, 0.7);
+    border-radius: 0.25em;
+    box-shadow: $shadow-smooth;
+
+    &__img {
+      width: 5em;
+      height: 5em;
+      border-radius: 50%;
+      transition: transform 0.1s ease;
+      box-shadow: $shadow-smooth;
+    }
+    &__text {
+      padding: 1rem;
+      font-size: 1.1em;
+      color: $color-darkGrey;
+    }
+
+    &:hover #story__img {
+      transform: rotate(-10deg);
+    }
+  }
+
+  #stories__dots {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+    .dot {
+      color: rgba($color-white, 0.5);
+    }
+    .dot.active {
+      color: rgba($color-white, 1);
+    }
+  }
+
+  .custom-shape-divider-bottom-1607872142 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 5em;
+    }
+    .shape-fill {
+      fill: $color-red;
+    }
+  }
+}

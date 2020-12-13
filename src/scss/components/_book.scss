@@ -1,0 +1,62 @@
+#book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $color-red;
+  padding: 3em;
+
+  &__box {
+    max-width: 70em;
+    width: 100%;
+
+    background: url("/dist/img/bookimg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 0.25em;
+    box-shadow: $shadow-smooth;
+
+    &-inner {
+      background: rgba($color-white, 0.75);
+      box-shadow: $shadow-smooth;
+      padding: 2em;
+      border-radius: 0.25em;
+
+      .header {
+        color: $color-blueyGrey;
+        font-weight: 900;
+        font-size: 1.5em;
+        text-transform: uppercase;
+      }
+
+      #form {
+        display: flex;
+        flex-direction: column;
+
+        #name,
+        #email {
+          border: none;
+          padding: 1em;
+          margin: 1em 0;
+
+          width: 100%;
+          color: $color-darkGrey;
+          font-size: 1.25em;
+          transition: all 0.1s ease;
+          border-radius: 0.25rem;
+
+          &:focus {
+            border-bottom: 3px solid $color-red;
+            box-shadow: $shadow-smooth;
+            transform: scale(1.01);
+          }
+        }
+        .btn {
+          width: 100%;
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
