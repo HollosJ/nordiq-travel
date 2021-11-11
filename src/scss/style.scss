@@ -46,6 +46,11 @@ body {
   color: $color-white;
 }
 
+.container {
+  max-width: 1024px;
+  padding: 0 1rem;
+}
+
 @import "components/cursor", "components/nav", "components/buttons",
   "components/headers", "components/intro", "components/about",
   "components/tours", "components/stories", "components/book",

@@ -8,7 +8,6 @@
   }
 
   &__content {
-    max-width: 70em;
     margin: 0 2em 2em 2em;
     display: grid;
     grid-template-columns: 1;
@@ -55,7 +54,6 @@
     overflow: hidden;
 
     &-inner {
-      max-width: 80rem;
       width: 100%;
       display: grid;
       justify-items: center;
