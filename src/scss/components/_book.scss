@@ -7,7 +7,6 @@
 
   &__box {
     width: 100%;
-
     background: url(../img/bookimg.jpg);
     background-size: cover;
     background-position: center;
@@ -15,6 +14,7 @@
 
     border-radius: 0.25em;
     box-shadow: $shadow-smooth;
+    padding: 0 0 0 0;
 
     &-inner {
       background: rgba($color-white, 0.75);
