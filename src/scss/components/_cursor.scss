@@ -1,16 +1,16 @@
 #cursor {
-  width: 2em;
-  height: 2em;
-  position: absolute;
-  border: 3px solid #fff;
-  background: rgba($color-white, 0.5);
+  width: 40px;
+  height: 40px;
+  border: 3px solid white;
   border-radius: 50%;
+  position: fixed;
   z-index: $z-cursor;
   pointer-events: none;
 
-  display: none;
-  transform: translate(-100%, -100%);
-}
-#cursor.active {
-  filter: blur(3px);
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+
+  &.active {
+    filter: blur(2px);
+  }
 }
