@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const imageMin = require("gulp-imagemin")
 const uglify = require("gulp-uglify-es").default;
+const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
 
@@ -23,6 +24,7 @@ gulp.task("copyHTML", (cb) => {
 gulp.task("uglify", (cb) => {
     gulp.src("src/js/*.js")
     .pipe(uglify())
+    .pipe(concat("index.js"))
     .pipe(gulp.dest("dist/js"))
     cb()
 })
