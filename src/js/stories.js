@@ -1,39 +1,3 @@
-//Navigation
-const nav_toggle = document.getElementById("nav__toggle");
-const nav_wrapper = document.getElementById("nav__wrapper");
-
-nav_toggle.addEventListener("click", () => {
-   nav_wrapper.classList.toggle("active");
-})
-
-//Custom cursor 
-const cursor = document.getElementById("cursor");
-const hoverables = document.querySelectorAll(".hoverable");
-
-document.addEventListener("mousemove", e => {
-    cursor.style.left = (e.clientX - 20) + "px";
-    cursor.style.top = (e.clientY - 20) + "px";
-});
-
-//Add active class to cursor when hovering over chosen elements
-hoverables.forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-        cursor.classList.add("active");
-    });
-    btn.addEventListener("mouseleave", () => {
-        cursor.classList.remove("active");
-    })
-});
-
-//Close navbar when link clicked
-const nav_btns = document.querySelectorAll(".nav__item");
-
-nav_btns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        nav_wrapper.classList.remove("active")
-    })
-})
-
 //Stories slideshow
 const stories = [
     {
@@ -76,4 +40,3 @@ changeImg = () => {
 }
 
 window.onload = changeImg
-
