@@ -1,11 +1,9 @@
 #tours {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: $color-white;
-  z-index: 1;
-
   &__inner {
     display: grid;
     grid-template-columns: 1fr;
@@ -16,92 +14,140 @@
     width: 100%;
     margin: 1rem 0 4rem 0;
     overflow: visible;
+    z-index: 1;
+
+    .tour,
+    .tour__price,
+    .btn,
+    .tour::after,
+    .from {
+      transition: all 0.2s ease;
+    }
+
+    .tour,
+    .tour::after,
+    .tour__title {
+      border-radius: 0.5rem;
+    }
 
     .tour {
-      width: 100%;
-      height: 25rem;
-      max-width: 30em;
+      height: 350px;
+      width: 300px;
       position: relative;
-      box-shadow: $shadow-smooth;
-      background: white;
+      border: 3px solid white;
+      color: $color-white;
+
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: end;
       align-items: center;
-      border-radius: 0.25rem;
-      transition: all 0.1s ease;
-
-      //individual tour styling
-      &#tour1 .tour__title {
-        background: linear-gradient(
-            to top,
-            rgba(2, 145, 0, 0.75),
-            rgba(0, 255, 11, 0.75)
-          ),
-          url(../img/cityimg.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &#tour2 .tour__title {
-        background: linear-gradient(
-            to top,
-            rgba(36, 60, 154, 0.75),
-            rgba(0, 250, 252, 0.75)
-          ),
-          url(../img/fjordimg.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      &#tour3 .tour__title {
-        background: linear-gradient(
-            to top,
-            rgba(176, 0, 0, 0.75),
-            rgba(252, 113, 0, 0.75)
-          ),
-          url(../img/hikeimg.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
+      text-align: center;
 
       &__title {
-        background: rgba($color-red, 0.5);
-        padding: 2rem 1rem;
-        text-align: center;
-        color: $color-white;
-        width: 100%;
-        border-radius: 0.25rem 0.25rem 0 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        position: absolute;
+        top: 0.5rem;
+        padding: 1rem 0;
+        width: calc(100% - 1rem);
       }
-      &__info {
-        font-size: 1.25em;
-        font-weight: 600;
-        list-style: none;
+      &__price {
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 3rem;
+        color: $color-darkGrey;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, $color-white, rgba(white, 0));
+        span {
+          display: block;
+        }
 
-        &-item {
-          width: 100%;
-          padding: 0 1rem;
-          text-align: center;
-          color: $color-darkGrey;
+        .from {
+          font-size: 1rem;
+          color: $color-blueyGrey;
+        }
+
+        sup {
+          font-size: 1rem;
         }
       }
+
       .btn {
-        margin: 1rem 0.5rem;
-        font-size: 1.2rem;
         text-align: center;
+        margin-bottom: 2rem;
       }
 
-      &:hover {
-        transform: translateY(-0.5rem);
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 1rem;
+        left: 1rem;
+        background: $color-lightGrey;
+        z-index: -1;
+      }
+
+      // unique styling for each tour
+      &--city {
+        .tour__title {
+          background: linear-gradient(
+              to top,
+              rgba(2, 145, 0, 0.75),
+              rgba(0, 255, 11, 0.75)
+            ),
+            url(../img/cityimg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      &--fjord {
+        .tour__title {
+          background: linear-gradient(
+              to top,
+              rgba(36, 60, 154, 0.75),
+              rgba(0, 250, 252, 0.75)
+            ),
+            url(../img/fjordimg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      &--hike {
+        .tour__title {
+          background: linear-gradient(
+              to top,
+              rgba(176, 0, 0, 0.75),
+              rgba(252, 113, 0, 0.75)
+            ),
+            url(../img/hikeimg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .tour:hover {
+      border-color: $color-red;
+      background: linear-gradient(to top, $color-lightGrey, white);
+
+      .tour__price {
+        transform: translateY(-1rem) scale(1.5);
+      }
+
+      .from {
+        opacity: 0;
+      }
+
+      .btn {
+        background: $color-red;
+        color: white;
+        transform: scale(1.05);
+      }
+      &::after {
+        background: $color-lightRed;
       }
     }
   }
